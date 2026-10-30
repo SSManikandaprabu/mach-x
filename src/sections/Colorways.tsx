@@ -43,7 +43,7 @@ export const Colorways: React.FC = () => {
 
               {/* Product Poster Image with CSS Tint Filter */}
               <img
-                src="/poster.jpg"
+                src={`${import.meta.env.BASE_URL}poster.jpg`}
                 alt={`MACH-X in ${selectedColor.name}`}
                 className="relative z-10 w-full h-full object-contain filter transition-all duration-700 ease-out group-hover:scale-105"
                 style={{

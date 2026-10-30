@@ -40,7 +40,7 @@ export const ProductPurchase: React.FC<ProductPurchaseProps> = ({ onAddToCart })
               />
 
               <img
-                src="/poster.jpg"
+                src={`${import.meta.env.BASE_URL}poster.jpg`}
                 alt="MACH-X Product"
                 className="relative z-10 w-full h-full object-contain filter transition-all duration-500"
                 style={{ filter: selectedColor.filterStyle }}

@@ -34,15 +34,19 @@ export const useFramePreloader = () => {
     let loadedCount = 0;
     let failedCount = 0;
 
+    const base = import.meta.env.BASE_URL.endsWith('/')
+      ? import.meta.env.BASE_URL
+      : `${import.meta.env.BASE_URL}/`;
+
     // Load poster as immediate fallback
     const poster = new Image();
-    poster.src = '/poster.jpg';
+    poster.src = `${base}poster.jpg`;
 
     // Batch preloading
     for (let i = 1; i <= total; i++) {
       const img = new Image();
       const padNum = String(i).padStart(4, '0');
-      img.src = `/frames/${folder}/frame_${padNum}.webp`;
+      img.src = `${base}frames/${folder}/frame_${padNum}.webp`;
 
       img.onload = () => {
         loadedCount++;
